@@ -19,6 +19,13 @@ adapter_settings = BotFrameworkAdapterSettings(
     app_password=settings.MICROSOFT_APP_PASSWORD,
 )
 
+print(f"MICROSOFT_APP_ID prefix: {settings.MICROSOFT_APP_ID[:8]}")
+print(f"MICROSOFT_APP_ID length: {len(settings.MICROSOFT_APP_ID)}")
+print(
+    f"MICROSOFT_APP_PASSWORD configured: {bool(settings.MICROSOFT_APP_PASSWORD)}"
+)
+print(f"MICROSOFT_APP_PASSWORD length: {len(settings.MICROSOFT_APP_PASSWORD)}")
+
 adapter = BotFrameworkAdapter(adapter_settings)
 
 
