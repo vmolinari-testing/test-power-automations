@@ -66,6 +66,19 @@ async def receive_bot_message(request: Request) -> Response:
     activity = Activity().deserialize(body)
     auth_header = request.headers.get("Authorization", "")
 
+    print(f"Incoming activity type: {activity.type}")
+    print(f"Incoming channel_id: {activity.channel_id}")
+    print(f"Incoming service_url: {activity.service_url}")
+    print(
+        "Incoming conversation_id: "
+        f"{activity.conversation.id if activity.conversation else None}"
+    )
+    print(f"Authorization header present: {bool(auth_header)}")
+    print(
+        "Authorization header prefix: "
+        f"{auth_header[:20] if auth_header else None}"
+    )
+
     response = await adapter.process_activity(
         activity,
         auth_header,
@@ -87,6 +100,10 @@ async def handle_turn(turn_context: TurnContext) -> None:
     Args:
         turn_context: Current Bot Framework turn context.
     """
+
+    print(f"Handling activity type: {turn_context.activity.type}")
+    print(f"Reply to activity id: {turn_context.activity.id}")
+
     if turn_context.activity.type == ActivityTypes.message:
         await turn_context.send_activity(
             Activity(
