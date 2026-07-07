@@ -18,6 +18,8 @@ app.use(express.json());
 const credentialsFactory = new ConfigurationServiceClientCredentialFactory({
     MicrosoftAppId: settings.microsoftAppId,
     MicrosoftAppPassword: settings.microsoftAppPassword,
+    MicrosoftAppType: settings.microsoftAppType,
+    MicrosoftAppTenantId: settings.microsoftAppTenantId,
 });
 
 const botFrameworkAuthentication =
@@ -144,5 +146,9 @@ app.listen(settings.port, () => {
     );
     console.log(
         `MICROSOFT_APP_PASSWORD length: ${settings.microsoftAppPassword.length}`,
+    );
+    console.log(`MICROSOFT_APP_TYPE: ${settings.microsoftAppType}`);
+    console.log(
+        `MICROSOFT_APP_TENANT_ID length: ${settings.microsoftAppTenantId.length}`,
     );
 });
