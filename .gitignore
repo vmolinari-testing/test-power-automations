@@ -1,3 +1,8 @@
+# Local files
+*.md
+!README.md
+*.txt
+
 # Python-generated files
 __pycache__/
 *.py[oc]
@@ -8,3 +13,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# secret files
+.env

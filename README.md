@@ -27,10 +27,11 @@ http://127.0.0.1:8000
 
 ## Available endpoints
 
-| Method | Endpoint       | Description                  |
-| ------ | -------------- | ---------------------------- |
-| GET    | `/`            | Health check                 |
-| GET    | `/automations` | Returns mock automation data |
+| Method | Endpoint        | Description                           |
+| ------ | --------------- | ------------------------------------- |
+| GET    | `/`             | Health check                          |
+| GET    | `/automations`  | Returns mock automation data          |
+| POST   | `/api/messages` | Receives Microsoft Teams bot messages |
 
 ## Purpose
 
