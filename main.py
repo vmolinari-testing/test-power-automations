@@ -18,6 +18,7 @@ app = FastAPI()
 adapter_settings = BotFrameworkAdapterSettings(
     app_id=settings.MICROSOFT_APP_ID,
     app_password=settings.MICROSOFT_APP_PASSWORD,
+    channel_auth_tenant=settings.MICROSOFT_APP_TENANT_ID,
 )
 
 print(f"MICROSOFT_APP_ID prefix: {settings.MICROSOFT_APP_ID[:8]}")
