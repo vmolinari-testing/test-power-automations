@@ -3,6 +3,12 @@
 !README.md
 *.txt
 
+# node / javascript
+node_modules/
+dist/
+npm-debug.log
+
+
 # Python-generated files
 __pycache__/
 *.py[oc]
