@@ -6,6 +6,7 @@ from botbuilder.core import (
     TurnContext,
 )
 from botbuilder.schema import Activity, ActivityTypes, Attachment
+from botframework.connector.auth import MicrosoftAppCredentials
 from fastapi import FastAPI, Request, Response
 from fastapi.responses import JSONResponse
 from src.config import settings
@@ -78,6 +79,9 @@ async def receive_bot_message(request: Request) -> Response:
         "Authorization header prefix: "
         f"{auth_header[:20] if auth_header else None}"
     )
+
+    if activity.service_url:
+        MicrosoftAppCredentials.trust_service_url(activity.service_url)
 
     response = await adapter.process_activity(
         activity,
