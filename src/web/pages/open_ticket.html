@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Apri segnalazione</title>
+
+    <link rel="stylesheet" href="/static/open_ticket.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Apri segnalazione RPA</h1>
+
+        <p>
+          Seleziona l'automazione interessata e descrivi brevemente il problema.
+        </p>
+
+        <form id="ticket-form">
+          <label for="automation">Automazione</label>
+          <select id="automation" name="automation" required>
+            <option value="">Caricamento automazioni...</option>
+          </select>
+
+          <label for="description">Descrizione problema</label>
+          <textarea
+            id="description"
+            name="description"
+            placeholder="Descrivi brevemente il problema..."
+            required
+          ></textarea>
+
+          <button type="submit">Invia segnalazione</button>
+        </form>
+
+        <div id="result" class="result"></div>
+      </section>
+    </main>
+
+    <script src="/static/open_ticket.js"></script>
+  </body>
+</html>

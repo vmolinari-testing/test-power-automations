@@ -11,8 +11,12 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
+# Virtual environments & node_modules
+node_modules/
 .venv
 
 # secret files
 .env
+
+# typescript compiled files
+*.js
