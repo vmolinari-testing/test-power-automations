@@ -12,3 +12,9 @@ PAGES_DIR = Path(__file__).parent / "pages"
 def open_ticket_tab() -> FileResponse:
     """Return the Teams tab page used to open an RPA support ticket."""
     return FileResponse(PAGES_DIR / "open_ticket.html")
+
+
+@router.get("/tab/config")
+def config_tab() -> FileResponse:
+    """Return the Teams tab configuration page."""
+    return FileResponse(PAGES_DIR / "config.html")
