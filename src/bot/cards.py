@@ -2,7 +2,7 @@ from typing import Any
 
 from botbuilder.schema import Attachment
 
-from src.data import mock_data
+from src.data import get_mock_data
 
 
 def build_ticket_card() -> Attachment:
@@ -24,7 +24,7 @@ def build_ticket_card() -> Attachment:
                 "label": "Automazione",
                 "style": "compact",
                 "isMultiSelect": False,
-                "choices": mock_data,
+                "choices": get_mock_data(),
             },
             {
                 "type": "Input.Text",
